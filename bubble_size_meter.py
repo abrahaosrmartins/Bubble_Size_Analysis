@@ -5,19 +5,15 @@ from scipy import ndimage
 from skimage import measure, color, io
 
 
-<<<<<<< HEAD
-img = cv2.imread("images/dtg2.png", 0)
-=======
 img = cv2.imread("images/dtg4.png", 0)
->>>>>>> a93288347ee831e19c791b8a1c312c2f8e2ff2f9
-pixels_to_um = 0.0000586 # (1 px = 0.0586 nm)
+pixels_to_um = 0.0000586  # (1 px = 0.0586 nm)
 
 # plt.hist(img.flat, bins = 250, range = (0,255))
 ret, thresh = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 
-kernel=np.ones((3,3), np.uint8)
-eroded = cv2.erode(thresh, kernel, iterations = 2)
-dilated = cv2.dilate(eroded, kernel, iterations = 2)
+kernel = np.ones((3, 3), np.uint8)
+eroded = cv2.erode(thresh, kernel, iterations=2)
+dilated = cv2.dilate(eroded, kernel, iterations=2)
 
 cv2.imshow("Thresholded Image", thresh)
 cv2.imshow("Eroded Image", eroded)
