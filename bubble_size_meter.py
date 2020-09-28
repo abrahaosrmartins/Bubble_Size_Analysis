@@ -5,7 +5,11 @@ from scipy import ndimage
 from skimage import measure, color, io
 
 
+<<<<<<< HEAD
 img = cv2.imread("images/dtg2.png", 0)
+=======
+img = cv2.imread("images/dtg4.png", 0)
+>>>>>>> a93288347ee831e19c791b8a1c312c2f8e2ff2f9
 pixels_to_um = 0.0000586 # (1 px = 0.0586 nm)
 
 # plt.hist(img.flat, bins = 250, range = (0,255))
